@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Lab 02"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-05-09 01:52:31 "/>
+        <attribute name="created" value="TGFiIDAyO0xBQi0wMi1NLTA0OzIwMjMtMDQtMjg7IjA1OjM2OjA4ICI7MjIxNg=="/>
+        <attribute name="edited" value="TGFiIDAyO0xBQi0wMi1NLTA0OzIwMjMtMDUtMDU7IjA2OjAxOjU0ICI7MTI7MjM2NA=="/>
+        <attribute name="edited" value="dWRpZWw7Tk9URUJPT0stRURVRDsyMDIzLTA1LTA2OyIwNzo0NDowMiAiOzE2OzI4Mjc="/>
+        <attribute name="edited" value="TGFiO0RFU0tUT1AtMDhPTlFRSTsyMDIzLTA1LTA5OyIwMTo1MjozMSAiOzI3OzI3MDI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="nome, cidade, escola, recarga, pegarTrem, confirma" type="String" array="False" size=""/>
+            <declare name="rg, cpf, idade, saldo, valorRecarga, i, j" type="Integer" array="False" size=""/>
+            <declare name="bilheteBom" type="Boolean" array="False" size=""/>
+            <assign variable="saldo" expression="0"/>
+            <output expression="&quot;Confirme seus dados&quot;" newline="True"/>
+            <output expression="&quot;Nome: &quot;" newline="True"/>
+            <input variable="nome"/>
+            <output expression="&quot;Cidade: &quot;" newline="True"/>
+            <input variable="cidade"/>
+            <output expression="&quot;Escola: &quot;" newline="True"/>
+            <input variable="escola"/>
+            <output expression="&quot;Idade: &quot;" newline="True"/>
+            <input variable="idade"/>
+            <output expression="&quot;RG: &quot;" newline="True"/>
+            <input variable="rg"/>
+            <output expression="&quot;CPF: &quot;" newline="True"/>
+            <input variable="cpf"/>
+            <output expression="&quot;Dados Confimados com sucesso...&quot;" newline="True"/>
+            <output expression="&quot;Saldo da conta &quot; &amp;  saldo" newline="True"/>
+            <output expression="&quot;Voce deseja recarregar?:(s/n) &quot;" newline="True"/>
+            <input variable="recarga"/>
+            <if expression="recarga == &quot;s&quot; or recarga == &quot;S&quot;">
+                <then>
+                    <do expression="saldo != 0">
+                        <output expression="&quot;Quanto deseja recarregar?: &quot;" newline="True"/>
+                        <input variable="valorRecarga"/>
+                        <output expression="&quot;insira o cart&#227;o&quot;" newline="True"/>
+                        <output expression="&quot;Aguarde...&quot;" newline="True"/>
+                        <for variable="i" start="0" end="1" direction="inc" step="1">
+                            <for variable="j" start="0" end="i" direction="inc" step="1">
+                                <output expression="&quot;..&quot;" newline="True"/>
+                            </for>
+                        </for>
+                    </do>
+                    <output expression="&quot;Escreva ok para confirmar compra: &quot;" newline="True"/>
+                    <input variable="confirma"/>
+                    <if expression="confirma == &quot;ok&quot; or confirma == &quot;OK&quot;">
+                        <then>
+                            <assign variable="saldo" expression="saldo + valorRecarga"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;A compra n&#195;&#163;o foi confirmada &quot;" newline="True"/>
+                        </else>
+                    </if>
+                    <while expression="saldo == 0">
+                        <output expression="&quot;Saldo atual: &quot; &amp; saldo" newline="True"/>
+                    </while>
+                    <output expression="&quot;Saldo atual: &quot; &amp; saldo" newline="True"/>
+                </then>
+                <else/>
+            </if>
+            <output expression="&quot;Voce deseja pegar o trem?(s/n): &quot;" newline="True"/>
+            <input variable="pegarTrem"/>
+            <output expression="&quot;Valor passagem: 4,40&quot;" newline="True"/>
+            <if expression="pegarTrem == &quot;s&quot; or pegarTrem == &quot;S&quot;">
+                <then>
+                    <output expression="&quot;Aguarde a verificacao de dados...&quot;" newline="True"/>
+                    <for variable="i" start="0" end="1" direction="inc" step="1">
+                        <for variable="j" start="0" end="1" direction="inc" step="1">
+                            <output expression="&quot;..&quot;" newline="True"/>
+                        </for>
+                    </for>
+                    <if expression="saldo &lt; 4.40">
+                        <then>
+                            <assign variable="bilheteBom" expression="false"/>
+                            <output expression="&quot;Saldo insuficiente, deseja fazer a recarga?(s/n): &quot;" newline="True"/>
+                            <input variable="recarga"/>
+                            <if expression="recarga == &quot;s&quot; or recarga == &quot;S&quot;">
+                                <then>
+                                    <do expression="saldo &lt; 0">
+                                        <output expression="&quot;Quanto deseja recarregar?:  &quot;" newline="True"/>
+                                        <input variable="valorRecarga"/>
+                                        <output expression="&quot;Insira o cart&#227;o&quot;" newline="True"/>
+                                        <output expression="&quot;Aguarde...&quot;" newline="True"/>
+                                        <for variable="i" start="0" end="1" direction="inc" step="1">
+                                            <for variable="j" start="0" end="i" direction="inc" step="1">
+                                                <output expression="&quot;..&quot;" newline="True"/>
+                                            </for>
+                                        </for>
+                                        <output expression="&quot;Escreva ok para confirmar compra: &quot;" newline="True"/>
+                                        <input variable="confirma"/>
+                                        <if expression="confirma == &quot;ok&quot; or confirma == &quot;OK&quot;">
+                                            <then>
+                                                <assign variable="saldo" expression="saldo + valorRecarga"/>
+                                            </then>
+                                            <else>
+                                                <output expression="&quot;A compra n&#227;o foi confirmada&quot;" newline="True"/>
+                                            </else>
+                                        </if>
+                                    </do>
+                                </then>
+                                <else>
+                                    <assign variable="bilheteBom" expression="true"/>
+                                    <output expression="&quot;Aguarde...&quot;" newline="True"/>
+                                    <for variable="i" start="0" end="1" direction="inc" step="1">
+                                        <for variable="j" start="0" end="i" direction="inc" step="1">
+                                            <output expression="&quot;..&quot;" newline="True"/>
+                                        </for>
+                                    </for>
+                                    <output expression="&quot;Seu saldo continuara insuficiente ate que voce recarregue&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </then>
+                        <else/>
+                    </if>
+                    <if expression="saldo &gt; 4.40">
+                        <then>
+                            <assign variable="bilheteBom" expression="true"/>
+                            <assign variable="saldo" expression="saldo - 4.40"/>
+                            <output expression="&quot;Boa viajem, saldo atual: &quot; &amp; saldo" newline="True"/>
+                        </then>
+                        <else/>
+                    </if>
+                </then>
+                <else>
+                    <output expression="&quot;ok, tenha uma otima viagem, esperamos voc&#234; na proxima :D&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
