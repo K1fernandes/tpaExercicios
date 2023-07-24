@@ -4,6 +4,6 @@
 
 <img src="https://idocode.com.br/wp-content/uploads/2021/07/programacao-scaled.jpg" width="500px">
 
-<h3>Repositorio exclusivo para postagem de exercicios de TPA</h3>
+<h3>Repositorio exclusivo para postagem de exercicios de TPA da Etec de Carapicuiba</h3>
 
 <p>Kauã Fernandes Souza De Melo</p>
